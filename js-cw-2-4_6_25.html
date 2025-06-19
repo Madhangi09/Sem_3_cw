@@ -1,0 +1,152 @@
+<!---<!DOCTYPE html>
+<html>
+<head>
+<title> Java Script Operators </title>
+</head>
+<body>
+<p id="p1"></p>
+<button type="button" onclick="checkAccess()"> Check Access </button>
+ <script>
+ function checkAccess()
+ {
+ let age=15;
+ let allowed=true; //use also false, && - and || - or//
+ if(age>=18 && allowed)  // in the place of && we can also use pipe || //
+ {
+ document.getElementById("p1").innerText="Access granted";
+ }
+ else
+ {
+ document.getElementById("p1").innerText="Access denied";
+ }
+ document.write(typeof allowed);
+ }
+ </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Java Script Operators </title>
+</head>
+<body>
+<p id="p1"></p>
+<button type="button" onclick="checkDay()"> Check Day </button>
+ <script>
+ function checkDay()
+ {
+ let dayNumber=3; //let dayNumber;    dayNumber=new Date().getDay();    switch(dayNumber)//
+ switch(dayNumber)
+ {
+ case 0:
+	day="Sunday";
+	break;
+case 1:
+	day="Monday";
+	break;
+case 2:
+	day="Tuesday";
+	break;
+case 3:
+	day="Wednesday";
+	break;
+case 4:
+	day="Thursday";
+	break;
+case 5:
+	day="Friday";
+	break;
+case 6:
+	day="Saturday";
+	break;
+	}
+	
+	document.getElementById("p1").innerHTML="Today is:"+day;
+	}
+ </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Java Script Operators </title>
+</head>
+<body>
+<p id="p1"></p>
+<button type="button" onclick="calculate()"> Click to calculate</button>
+ <script>
+ function calculate()
+ {
+ let n1=parseInt(prompt("Enter a number:"));
+ let n2=parseInt(prompt("Enter another number:"));
+ let operation=prompt("Enter the operation '+' Add '-' Subtract '*' Multiply");
+ let result;
+ switch(operation)
+ {
+ case '+':
+	result=n1+n2;
+	break;
+ case '-':
+	result=n1-n2;
+	break;
+ case '*':
+	result=n1*n2;
+	break;
+default:
+	alert("Enter a valid operation");
+	}
+	document.getElementById("p1").innerHTML="Answer is:"+result;
+	}
+ </script>
+</body>
+</html>--->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Java Script Operators </title>
+</head>
+<body>
+<label for="n1"> Enter first number</label>
+<input type="number" id="n1" placeholder="1st number">
+<br><br>
+<label for="n2"> Enter second number</label>
+<input type="number" id="n2" placeholder="2nd number">
+<br><br>
+<label for="o1"> Enter operation</label>
+<input type="number" id="o1" placeholder="+/-/*">
+<br><br>
+<p id="p1"></p>
+<br>
+<button type="button" onclick="calculate()"> Click to calculate</button>
+ <script>
+ function calculate()
+ {
+ let n1=parseInt(document.getElementById("n1").value);
+ let n2=parseInt(document.getElementById("n2").value);
+ let operation=document.getElementById("o1").value;
+ let result;
+ switch(operation)
+ {
+case '+':
+	result=n1+n2;
+	break;
+ case '-':
+	result=n1-n2;
+	break;
+ case '*':
+	result=n1*n2;
+	break;
+default:
+	result="Invalid operation";
+	}
+	document.getElementById("p1").textContent=result;
+	}
+ </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!---<!DOCTYPE html>
+<html>
+<head>
+<title> JS Forms </title>
+<script>
+function validateForm()
+{
+let val=document.forms["f1"]["fname"].value   //gets the value from the input fieldsett//
+if(val==="")
+{
+alert("Name can't be empty");
+return false;
+}
+}
+</script>
+</head>
+<body>
+<h3> Form Validation </h3>
+<form name="f1" action="/submit" onsubmit="return validateForm()" method="post">
+</form>
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<input type="text" id="textField" placeholder="Enter a key">
+<script>
+const input=document.getElementById('textField');
+input.addEventListener('keydown',function(event)
+{console.log('Key down:',event.key);}
+);
+input.addEventListener('keyup',function(event)
+{console.log('Key up:',event.key);}
+);
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+document.addEventListener('keydown',function(event){
+if (event.ctrlKey && event.key==='s')
+{
+event.preventDefault();  //not to prevent the dialogue box we are presenting this line
+alert('You pressed control+s');
+}
+});
+</script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id="div1"> Press s - smile c - cry
+</div>
+<script>
+const divElement=document.getElementById('div1');
+document.addEventListener('keydown', function(event){
+let reaction='';
+switch(event.key)
+{
+case 's':
+reaction= "😁";
+break;
+case 'c':
+reaction= "😔";
+break;
+default:
+reaction="Hey!! press any valid key";
+}
+divElement.textContent=reactions;s
+});
+</script>
+</body>
+</html>

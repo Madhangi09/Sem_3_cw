@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Local storage </title>
+</head>
+<body>
+<h2> Local Storage </h2>
+<script>
+localStorage.setItem("name", "Mad");
+localStorage.removeItem('name');
+let nameValue=localStorage.getItem('name');
+console.log(nameValue);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Local storage </title>
+</head>
+<body>
+<h2> Local Storage </h2>
+<input type="text" id="t1" placeholder="Enter username">
+<button id="b1" onclick="getName()"> Set </button>
+<button id="b2" onclick="getName()"> Get Item </button>
+<p id="p1"></p>
+<script>
+function setName()
+{
+const userName=document.getElementById("t1").value;
+if(userName!=="")
+{
+localStorage.setItem("UN", userName);
+alert("Item saved!!!!");
+}
+}
+function getName()
+{
+const name=localStorage.getItem("UN");
+document.getElementById("p1").innerHTML="Username="+name;
+}
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Local storage </title>
+</head>
+<body>
+<h2> Local Storage  for non-string data</h2>
+<script>
+let userDetails={"name":"Geetha","role":"Technical Mentor"};
+localStorage.setItem("UserName",JSON.stringify(userDetails));
+let value=JSON.parse(localStorage.getItem("UserName"));
+console.log(value.name);
+console.log(value.role);
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Local storage </title>
+</head>
+<body>
+<div>
+<h2> Local Storage </h2>
+<input type="text" id="t1" placeholder="Enter username">
+<button id="b1" onclick="getName()"> Set </button>
+<button id="b2" onclick="getName()"> Get Item </button>
+<p id="p1"></p>
+</div>
+<div>
+<h2> Session Storage </h2>
+<input type="text" id="t1" placeholder="Enter username">
+<button id="b1" onclick="getName()"> Set </button>
+<button id="b2" onclick="getName()"> Get Item </button>
+<p id="p1"></p>
+</div>
+<script>
+function setName()
+{
+const userName=document.getElementById("t1").value;
+if(userName!=="")
+{
+localStorage.setItem("UN", userName);
+alert("Item saved!!!!");
+}
+}
+function getName()
+{
+const name=localStorage.getItem("UN");
+document.getElementById("p1").innerHTML="Username="+name;
+}
+function setSessionName(){
+const userName=document.getElementById("t2").value;
+if (userName!==""){
+sessionStorage.setItem("sessionUN",userName);
+alert("Name saved.....")
+}
+}
+function getSessionName(){
+const name=sessionStorage.getItem("sessionUN")
+document.getElementById("p2").textContent=Username = ${name}
+}
+</body>
+</html>
+
+
