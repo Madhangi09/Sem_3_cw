@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>List with AngularJS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"> </script>
+</head>
+<style> 
+body{ background-image:url("https://cdn.wallpapersafari.com/94/84/Gu1wYb.jpg");
+}
+</style>
+<body>
+<h2> Lists example using Angular JS </h2>
+<div ng-init="Colors=['Yellow', 'Blue', 'Green', 'Black', 'Brown', 'Pink', 'Red', 'Orange', 'Beige', 'White', 'Peach', 'Aqua', 'Magenta', 'Maroon', 'Lavendar']">
+<u1>
+<p style="background-color:salmon;"> Total items in the list are: {{Colors.length}}
+<li ng-repeat="C in Colors"> {{$index+1}}-{{C}}</li>
+</u1>
+<p style="background-color:teal;"> Total items in the list are: {{Colors.length}}
+</div>
+</body>
+</html> 
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>List with AngularJS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"> </script>
+</head>
+<body>
+<div style="background-color:beige;" ng-app="app1" ng-controller="c1">
+{{Firstname+" "+Lastname}}
+</div>
+<script>
+var app=angular.module("app1",[]); //creates a module
+app.controller("c1",function($scope){
+$scope.Firstname="Mad";
+$scope.Lastname="Bala";
+});
+</script>
+</body>
+</html> -->
+
