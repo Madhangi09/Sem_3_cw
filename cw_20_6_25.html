@@ -1,0 +1,85 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Filters </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"> </script>
+</head>
+<body style="background-color:aqua;">
+<div style="background-color:beige;" ng-app="app1" ng-controller="c2" ng-init="price=250"; name='filters'">
+<p style="color:red;"> {{price | currency}}</p>
+<p style="color:blue;"> {{name | uppercase}}</p>
+<p style="color:green;"> {{today | date:'fullDate'}}</p>
+</div>
+<script>
+var app=angular.module("app1",[]);
+app.controller("c2", function($scope)
+{
+$scope.today=new Date();
+});
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Filters </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"> </script>
+</head>
+<body ng-app="" ng-init="isVisible='true'" style="background-color:antiquewhite;">
+<button ng-click="isVisible=!isVisible">
+Click to Toggle
+</button>
+<p ng-show="isVisible" style="color:red;"> Show works when it is sets true </p>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Filters in Angular JS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body style="background-color:burlywood;">
+<div ng-app="app1" ng-controller="c1" style="background-color: aquamarine;">
+<div ng-if="displayMessage" style="background-color: cadetblue;">
+It shows only when it is true.
+Also,it removes the element from the DCM when false.
+</div>
+</div>
+<script>
+angular.module("app1",[]).controller("c1",function($scope)
+{
+$scope.displayMessage=true;
+});
+</script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Filters in Angular JS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-init="role='guest'">
+<label>Select role:</label>
+<select ng-model="role">
+<option value="admin">admin</option>
+<option value="user">user</option>
+<option value="guest">guest</option>
+</select>
+<div ng-switch="role">
+<p ng-switch-when="admin">Hello, Admin!</p>
+<p ng-switch-when="user">Hello, User!</p>
+<p ng-switch-default="admin">Welcome, Guest!</p>
+</script>
+</body>
+</html>
