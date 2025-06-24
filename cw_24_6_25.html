@@ -1,0 +1,61 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> filters </title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body style="background-color:peachpuff;">
+<div ng-app="app1" ng-controller="c1">
+<h2> Calculator </h2>
+Number 1: <input type="number" ng-model="n1">
+Number 2: <input type="number" ng-model="n2">
+<button ng-click="add()"> ADD </button> 
+<button ng-click="multiply()"> MULTIPLY </button> 
+<p style="color:purple;"> {{Answer}} </p>
+</div>
+<script>
+var app=angular.module("app1",[]);
+//service creation
+app.service('math',function(){
+this.add=function(num1, num2){
+return num1+num2;
+}
+this.multiply=function(num1, num2){
+return num1*num2;
+}
+});
+//creating  a controller
+app.controller("c1", function($scope,math)
+{
+$scope.n1=0;
+$scope.n2=0;
+$scope.add=function(){
+$scope.Answer=math.add($scope.n1, $scope.n2);
+}
+$scope.multiply=function(){
+$scope.Answer=math.multiply($scope.n1, $scope.n2);
+}
+});
+</script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> SPA Example  </title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+ <script src="app.js"></script>
+</head>
+<body style="background-color:peachpuff;" ng-app="app1">
+<a href="/home.html"> Home </a>
+<a href="/about.html"> About </a>
+<a href="/user1.html"> User 1 </a>
+<div style="background-color:yellow;" ng-view></div>
+</body>
+</html>
+
+
