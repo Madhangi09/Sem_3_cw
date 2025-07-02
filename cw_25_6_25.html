@@ -1,0 +1,82 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Directive - Simple</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="app1">
+
+<div ng-controller="c1">
+    <name-card name="Mad" email="mad@gmail.com"></name-card>
+    <name-card name="Ani" email="ani@gmail.com"></name-card>
+</div>
+
+<script>
+    var app = angular.module("app1", []);
+
+    app.controller("c1", function($scope) {
+        // No logic needed for now
+    });
+
+    app.directive("nameCard", function() {
+        return {
+            restrict: "E",
+            scope: {
+                name: '@',
+                email: '@'
+            },
+            template: `
+                <div>
+                    <div><strong>Name:</strong> {{name}}</div>
+                    <div><strong>Email:</strong> {{email}}</div>
+                    
+                </div>
+            `
+        };
+    });
+</script>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app="app1">
+<head>
+    <title>Attribute Directive </title>
+    <style>
+        .highlight
+        {
+            background-color: aquamarine;
+            font-size:18px;
+            color:red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="c1" style="background-color: beige;">
+    <p highlight>This text will be highlighted</p>
+    <script>
+        var app= angular.module("app1",[]);
+
+        app.controller("c1",function($scope){
+
+        });
+        
+        app.directive('highlight', function(){
+            return{
+                restrict: 'A',
+                link: function(scope,element,attrs)
+                {
+                    element.on("mouseenter",function(){
+                        element.addClass('highlight');
+                    });
+                    element.on("mouseleave",function(){
+                        element.removeClass('highlight');
+                    });
+                }
+};
+        });
+    </script>
+</body>
+</html>

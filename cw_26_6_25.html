@@ -1,0 +1,53 @@
+<!--<!DOCTYPE html>
+<html>
+ <head>
+ <title>Angular filters</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body style="background-color:yellow";>
+<div ng-app="app1" ng-controller="c1">
+<ul><li ng-repeat="sd in student_details|orderBy:'name'">  //we can also use marks in the place of name and can use (-) to print in reverse//
+{{sd.name}}={{sd.marks}}</li></ul></div>
+<script>
+var app=angular.module("app1", []);
+app.controller("c1", function($scope)
+{
+$scope.student_details=[{name:"Mad", marks:90},
+{name:"Ani", marks:95},
+{name:"Kam", marks:85}];
+});
+</script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Angular filters</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body style="background-color:gray";>
+<div ng-app="app1" ng-controller="c1">
+Original String: <p style="color:red;">{{name}}</p>
+Reversed String: <p style="color:green;">{{name|removeVowels}}</p></div> 
+<script>
+var app=angular.module("app1", []);
+app.controller("c1", function($scope)
+{
+$scope.name="mad";
+});
+app.filter('removeVowels', function()
+{
+return function(input)
+{
+//return input.split('').reverse().join('');
+//u can also use 'reverse' and 'capitalizeFirst' in the place of "removeVowels"
+if(!input) return '';
+//return input.charAt(0).toUpperCase()+input.slice(1);
+return input.replace(/[aeiouAEIOU]/g,'');
+};
+});
+</script>
+</body>
+</html>
